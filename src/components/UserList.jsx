@@ -6,9 +6,7 @@ const UserList = () => {
   const getUsers = useStore((state) => state.getUsers);
   const removeUser = useStore((state) => state.removeUser);
 
-  useEffect(() => {
-    getUsers();
-  }, []);
+  useEffect(getUsers, []);
 
   return (
     <Fragment>
