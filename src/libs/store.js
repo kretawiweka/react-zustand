@@ -3,8 +3,8 @@ const useStore = create((set) => ({
   users: [],
   getUsers: async () => {
     const res = await fetch("https://jsonplaceholder.typicode.com/users");
-    console.log(res);
-    set({ users: await res.json() });
+    const resData = await res.json();
+    set({ users: resData });
   },
   removeUser: (id) =>
     set((state) => ({
